@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import classname from "classnames";
 import {connect} from 'react-redux';
+import {slack} from "../actions/slack";
 import {logoutUser} from "../actions/auth";
 
 class Slack extends Component {
