@@ -8,7 +8,7 @@ import PrivateRoute from './PrivateRoute';
 import {Home, Login, Slack, Regist} from "../components/index";
 import setAuthToken from "../libs/setAuthToken";
 import jwt_decode from "jwt-decode";
-import store from "../store";
+import store from "../stores";
 import {logoutUser, setCurrentUser} from "../actions/auth";
 import Provider from "react-redux/es/components/Provider";
 
