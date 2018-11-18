@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Header from './Header';
 
 import PrivateRoute from './PrivateRoute';
 
-import {Login, Slack, Regist} from "../components/index";
+import {Home, Login, Slack, Regist} from "../components/index";
 import setAuthToken from "../libs/setAuthToken";
 import jwt_decode from "jwt-decode";
 import store from "../store";
@@ -31,6 +31,7 @@ class App extends Component {
                 <Router>
                     <div>
                         <Header/>
+                        <Route exact path={"/"} component={Home}/>
                         <Route exact path={"/login"} component={Login}/>
                         <Route exact path={"/regist"} component={Regist}/>
                         <PrivateRoute exact path={"/slack"} component={Slack}/>
