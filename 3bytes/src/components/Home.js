@@ -10,15 +10,16 @@ const Home = () => {
                 <div className="inner">
                     <div className="flex flex-2">
                         <article>
-                            Communicate and Activate in Diversity
-
-                            Communicate with people which have same interested field with you. Study about the field with same interested group. Progress project with yourself or with making groups. Participate Community’s own Hackerton, CTF or external contest exhibits with diverse peoples.
-
-
+                            <p><h4>더 많은 소통 : 아는 것을 알려주세요</h4></p>
+                            <p><h4>더 많은 공유 : 가진 것을 나눠주세요</h4></p>
+                            <p><h4>더 많은 교류 : 다양한 사람과 대화하세요</h4></p>
+                            <p><h4>더 많은 정보 : 새로운 기술을 받아드리세요</h4></p>
                         </article>
                         <article>
-                            Make research with Open Labs
-                            Suggest your own topics  that you want to study with peoples. Like Algorithms, Codes, languages, or techniques that you imagine or plan with. Don’t make your idea only stay in ‘idea’. Now make you idea come real in world with open labs! Research your idea with lots of people’s opinions and knowledges!
+                            <p><h4>OpenSource를 준수합니다</h4></p>
+                            <p><h4>다양한 언어, 기술로 우리의 주제를 표현합니다</h4></p>
+                            <p><h4>아이디어란 생각을 프로젝트라는 결과로 구현합니다</h4></p>
+                            <p><h4>다양한 사람들과 교류해 자신의 지식을 키우세요</h4></p>
                         </article>
                     </div>
                 </div>
