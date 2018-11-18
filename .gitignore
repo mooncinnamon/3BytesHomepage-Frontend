@@ -22,4 +22,6 @@
 3bytes/yarn-debug.log*
 3bytes/yarn-error.log*
 
+3bytes/.idea
+
 .vscode/
