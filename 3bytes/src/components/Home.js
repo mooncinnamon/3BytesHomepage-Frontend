@@ -1,8 +1,9 @@
 import React from 'react';
-
+import Banner from 'Banner';
 const Home = () => {
     return(
         <div>
+            <Banner/>
             <section id="three" className="wrapper align-center">
                 <div className="inner">
                     <div className="flex flex-2">
