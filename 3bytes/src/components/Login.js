@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import Footer from './Footer';
 import {loginUser} from '../actions/auth';
 
 import classname from 'classnames';
@@ -55,42 +56,61 @@ class Login extends Component {
     render() {
         const {errors} = this.state;
         return (
-            <div className="container" style={{marginTop: '50px', width: '700px'}}>
-                <h2 style={{marginBottom: '40px'}}>Login</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            placeholder="username"
-                            className={classname('form-control form-control-lg', {
-                                'is-invalid': errors.username
-                            })}
-                            name="username"
-                            onChange={this.handleInputChange}
-                            value={this.state.username}
-                        />
-                        {errors.username && (<div className="invalid-feedback">{errors.username}</div>)}
+            <React.Fragment>
+                <header id="header">
+                    <div className="inner">
+                        <a href="/">
+                            <h1>3Bytes</h1>
+                        </a>
                     </div>
-                    <div className="form-group">
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            className={classname('form-control form-control-lg', {
-                                'is-invalid': errors.password
-                            })}
-                            name="password"
-                            onChange={this.handleInputChange}
-                            value={this.state.password}
-                        />
-                        {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
+                </header>
+                <section id={"three"}>
+                    <div className="container" style={{marginTop: '50px', width: '700px'}}>
+                        <header>
+                            <h2 style={{marginBottom: '40px'}}>Login</h2>
+                        </header>
+                        <form onSubmit={this.handleSubmit}>
+                            <p>
+                                <div className="field half">
+                                    <label htmlFor="name">ID</label>
+                                    <input
+                                        type="text"
+                                        placeholder="username"
+                                        className={classname('form-control form-control-lg', {
+                                            'is-invalid': errors.username
+                                        })}
+                                        name="username"
+                                        onChange={this.handleInputChange}
+                                        value={this.state.username}
+                                    />
+                                    {errors.username && (<div className="invalid-feedback">{errors.username}</div>)}
+                                </div>
+                            </p>
+                            <p>
+                                <div className="field half">
+                                    <label htmlFor="name">Password</label>
+                                    <input
+                                        type="password"
+                                        placeholder="Password"
+                                        className={classname('form-control form-control-lg', {
+                                            'is-invalid': errors.password
+                                        })}
+                                        name="password"
+                                        onChange={this.handleInputChange}
+                                        value={this.state.password}
+                                    />
+                                    {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
+                                </div>
+                            </p>
+                            <ul className="actions">
+                                <li>
+                                    <button type="submit">Sign In</button>
+                                </li>
+                            </ul>
+                        </form>
                     </div>
-                    <div className="form-group">
-                        <button type="submit" className="btn btn-primary">
-                            Login User
-                        </button>
-                    </div>
-                </form>
-            </div>
+                </section>
+            </React.Fragment>
         )
     }
 }
