@@ -4,6 +4,7 @@ import classname from "classnames";
 import {connect} from 'react-redux';
 import {slack} from "../actions/slack";
 import {logoutUser} from "../actions/auth";
+import Header from "./SubHeader";
 
 class Slack extends Component {
 
@@ -48,37 +49,47 @@ class Slack extends Component {
     render() {
         const {errors} = this.state;
         return (
-            <div className="container" style={{marginTop: '50px', width: '700px'}}>
-                <h1>Send Slack Email</h1>
-                <h3>You can come to our place</h3>
-                <h2 style={{marginBottom: '40px'}}>Login</h2>
-                <form onSubmit={this.handleSubmit}>
-                    <div className="form-group">
-                        <input
-                            type="email"
-                            placeholder="EMail"
-                            className={classname('form-control form-control-lg', {
-                                'is-invalid': errors.email
-                            })}
-                            name="email"
-                            onChange={this.handleInputChange}
-                            value={this.state.email}
-                        />
-                        {errors.email && (<div className="invalid-feedback">{errors.email}</div>)}
+            <React.Fragment>
+                <Header/>
+                <section id={"three"}>
+                    <div className="container" style={{marginTop: '50px', width: '700px'}}>
+                        <header>
+                            <h1>Send Slack Email</h1>
+                            <h3>You can come to our place</h3>
+                        </header>
+                        <form onSubmit={this.handleSubmit}>
+                            <p>
+                            <div className="form-group">
+                                <label htmlFor="name">EMail</label>
+                                <input
+                                    type="email"
+                                    placeholder="EMail"
+                                    className={classname('form-control form-control-lg', {
+                                        'is-invalid': errors.email
+                                    })}
+                                    name="email"
+                                    onChange={this.handleInputChange}
+                                    value={this.state.email}
+                                />
+                                {errors.email && (<div className="invalid-feedback">{errors.email}</div>)}
+                            </div>
+                            </p>
+                            <ul className="actions">
+                                <li>
+                                    <button type="submit">
+                                        Send Mail
+                                    </button>
+                                </li>
+                            </ul>
+                        </form>
                     </div>
-                    <div className="form-group">
-                        <button type="submit" className="btn btn-primary">
-                            Send Mail User
-                        </button>
-                    </div>
-                </form>
-            </div>
+                </section>
+            </React.Fragment>
         )
     }
 }
 
 Slack.propTypes = {
-    logoutUser: PropTypes.func.isRequired,
     slack: PropTypes.func.isRequired,
     errors: PropTypes.object.isRequired
 };
@@ -88,4 +99,4 @@ const mapStateToProps = (state) => ({
     errors: state.errors
 });
 
-export default connect(mapStateToProps, {slack},{logoutUser})(Slack);
+export default connect(mapStateToProps, {slack})(Slack)
