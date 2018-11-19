@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import Footer from './Footer';
+import Header from './SubHeader';
 import {loginUser} from '../actions/auth';
 
 import classname from 'classnames';
@@ -57,13 +57,7 @@ class Login extends Component {
         const {errors} = this.state;
         return (
             <React.Fragment>
-                <header id="header">
-                    <div className="inner">
-                        <a href="/">
-                            <h1>3Bytes</h1>
-                        </a>
-                    </div>
-                </header>
+                <Header/>
                 <section id={"three"}>
                     <div className="container" style={{marginTop: '50px', width: '700px'}}>
                         <header>
