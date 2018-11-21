@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {alertActions} from "./auth.actions";
 import {GET_ERROR, SET_CURRENT_USER} from './types';
 import setAuthToken from '../libs/setAuthToken';
 import jwt_decode from 'jwt-decode';
