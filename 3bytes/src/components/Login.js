@@ -12,7 +12,7 @@ class Login extends Component {
         this.state = {
             username: '',
             password: '',
-            errors: {},
+            errors: false,
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -37,18 +37,16 @@ class Login extends Component {
     componentDidMount() {
         if (this.props.auth.isAuthenticated) {
             this.props.history.push('/');
-            console.log('componentDidMount', 'go to home');
         }
     }
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.auth.isAuthenticated) {
             this.props.history.push('/');
-            console.log('componentWillReceiveProps', 'go to home');
         }
         if (nextProps.errors) {
             this.setState({
-                errors: nextProps.errors
+                errors: true
             });
         }
     }
@@ -77,7 +75,6 @@ class Login extends Component {
                                         onChange={this.handleInputChange}
                                         value={this.state.username}
                                     />
-                                    {errors.username && (<div className="invalid-feedback">{errors.username}</div>)}
                                 </div>
                             </p>
                             <p>
@@ -93,9 +90,14 @@ class Login extends Component {
                                         onChange={this.handleInputChange}
                                         value={this.state.password}
                                     />
-                                    {errors.password && (<div className="invalid-feedback">{errors.password}</div>)}
+
                                 </div>
                             </p>
+
+                            {errors && (<p>
+                                <div className="invalid-feedback"><h5>아이디나 패스워드를 확인해 주세요.</h5></div>
+                            </p>)}
+
                             <ul className="actions">
                                 <li>
                                     <button type="submit">Sign In</button>
