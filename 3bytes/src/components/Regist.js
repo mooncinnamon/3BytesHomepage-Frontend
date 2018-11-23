@@ -16,7 +16,7 @@ class Register extends Component {
             password: '',
             password_confirm: '',
             secretcode: '',
-            errors: {}
+            errors: false
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
